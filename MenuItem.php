@@ -16,20 +16,20 @@ class MenuItem extends AbstractItem {
     protected $type = '';
     private  $btn_name;
 
-    /** @var string icon file */   
-     protected $svg = __DIR__ . '/06-revert_replay.svg';
-  
+    /** @var string icon file */
+    protected $svg = __DIR__ . '/06-revert_replay.svg';
+
     /**
      * MenuItem constructor.
      * @param string $btn_name (can be passed in from the  event handler)
      */
     public function __construct($btn_name = "") {
-         parent::__construct();        
-         $this->params['do']=""; 
-         if($btn_name)  {
-            $this->btn_name = $btn_name;     
-         }               
-         
+        parent::__construct();
+        $this->params['do']="";
+        if($btn_name)  {
+            $this->btn_name = $btn_name;
+        }
+
     }
 
     /**
@@ -37,11 +37,11 @@ class MenuItem extends AbstractItem {
      *
      * @return string
      */
-    public function getLabel() {        
+    public function getLabel() {
         return $this->btn_name;
-     }
-    
-     public function getLink() {
-         return 'javascript:tplmod_toggle_aside();void(0);';
-     }
+    }
+
+    public function getLink() {
+        return 'javascript:tplmod_toggle_aside();void(0);';
+    }
 }
