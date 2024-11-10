@@ -49,13 +49,15 @@ class action_plugin_tplmod extends DokuWiki_Action_Plugin {
 	}
 	
     function handle_profile_form(Doku_Event $event, $param) {
+         global $INPUT;
+
 		 $language = trim($this->getConf('deflang'));
 		 if(!isset($language)|| empty($language)) {
 			 return;
 		 }		 
          $language = explode( ',',$language);
 
-		 $client =   $_SERVER['REMOTE_USER'];
+		 $client = $INPUT->server->str('REMOTE_USER');
          $ar = unserialize(file_get_contents($this->ui_priority_metafn));   
          if(isset($ar[$client])) {
              $lan = $ar[$client];
@@ -104,7 +106,7 @@ class action_plugin_tplmod extends DokuWiki_Action_Plugin {
             global $INPUT, $JSINFO, $conf,$ID,$USERINFO;  
           
             if(file_exists($this->ui_priority_metafn)) {
-               $client = $_SERVER['REMOTE_USER'];       
+               $client = $INPUT->server->str('REMOTE_USER');
                $ar = unserialize(file_get_contents($this->ui_priority_metafn));              
                if(isset($ar[$client])) {
                   $ln = $ar[$client];              
