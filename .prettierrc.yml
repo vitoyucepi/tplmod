@@ -1,0 +1,16 @@
+---
+singleQuote: true
+bracketSpacing: false
+printWidth: 120
+proseWrap: always
+tabWidth: 2
+plugins:
+  - '@prettier/plugin-php'
+
+overrides:
+  - files:
+      - '*.php'
+    options:
+      tabWidth: 4
+      braceStyle: 1tbs
+      phpVersion: '7.0'

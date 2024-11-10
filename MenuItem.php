@@ -11,10 +11,9 @@ use dokuwiki\Menu\Item\AbstractItem;
  * @package dokuwiki\plugin\tplmod
  */
 class MenuItem extends AbstractItem {
-
     /** @var string do action for this plugin */
     protected $type = '';
-    private  $btn_name;
+    private $btn_name;
 
     /** @var string icon file */
     protected $svg = __DIR__ . '/06-revert_replay.svg';
@@ -23,13 +22,12 @@ class MenuItem extends AbstractItem {
      * MenuItem constructor.
      * @param string $btn_name (can be passed in from the  event handler)
      */
-    public function __construct($btn_name = "") {
+    public function __construct($btn_name = '') {
         parent::__construct();
-        $this->params['do']="";
-        if($btn_name)  {
+        $this->params['do'] = '';
+        if ($btn_name) {
             $this->btn_name = $btn_name;
         }
-
     }
 
     /**
